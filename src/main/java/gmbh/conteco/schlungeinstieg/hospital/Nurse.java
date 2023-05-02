@@ -1,4 +1,4 @@
-package gmbh.conteco.schlungeinstieg;
+package gmbh.conteco.schlungeinstieg.hospital;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

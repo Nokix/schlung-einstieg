@@ -1,4 +1,4 @@
-package gmbh.conteco.schlungeinstieg;
+package gmbh.conteco.schlungeinstieg.hospital;
 
 public interface Staff {
     String assist();

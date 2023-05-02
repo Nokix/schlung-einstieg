@@ -1,5 +1,6 @@
 package gmbh.conteco.schlungeinstieg;
 
+import gmbh.conteco.schlungeinstieg.hospital.Doctor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,23 +15,6 @@ public class SchlungEinstiegApplication {
 	public static void main(String[] args) {
 		ApplicationContext context =
 				SpringApplication.run(SchlungEinstiegApplication.class, args);
-		Doctor doctor = context.getBean(Doctor.class);
-		System.out.println(doctor.assist());
-	}
 
-	@Bean
-	@Profile("dev")
-	public String qualification() {
-		return "Mr. Arzt";
 	}
-
-	@Bean
-	public String getName() {
-		return "Gustav";
-	}
-
-//	@Bean("doctor")
-//	public Doctor getDoctor(String qualification, Nurse nurse) {
-//		return new Doctor(qualification, nurse);
-//	}
 }
