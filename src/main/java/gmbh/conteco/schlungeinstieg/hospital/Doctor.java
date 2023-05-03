@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Doctor implements Staff {
-    @Value("${name}")
+    @Value("Karl")
     String qualification;
 
     @Autowired
