@@ -12,4 +12,8 @@ public class Item {
     public long getPrice() {
         return price;
     }
+
+    public String getName() {
+        return name;
+    }
 }

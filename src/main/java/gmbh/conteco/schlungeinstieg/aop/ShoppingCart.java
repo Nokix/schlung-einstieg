@@ -13,21 +13,19 @@ public class ShoppingCart {
     private Map<Item, Long> cart = new HashMap<>();
 
     private long itemCount = 0;
+
     private long price = 0;
 
+    @LogMe
     public long addItem(Item item) {
         Long amountOfItem = cart.getOrDefault(item, 0L);
         amountOfItem++;
         cart.put(item, amountOfItem);
-        updateItemCount();
-        updatePrice();
         return amountOfItem;
     }
 
     public void deleteItem(Item item) {
         cart.remove(item);
-        updateItemCount();
-        updatePrice();
     }
 
     public long removeItem(Item item) {
@@ -39,11 +37,10 @@ public class ShoppingCart {
         } else {
             cart.put(item, amountOfItem);
         }
-        updateItemCount();
-        updatePrice();
         return amountOfItem;
     }
 
+    @LogMe
     public void checkout() {
         System.out.println("You have " + itemCount + " items in your cart.");
         System.out.println("The Price is: " + price);
@@ -54,8 +51,19 @@ public class ShoppingCart {
                 .mapToLong(Long::longValue).sum();
     }
 
+
     // von Torben
     public void updatePrice() {
-        this.price = cart.keySet().stream().mapToLong(item -> cart.get(item) * item.getPrice()).sum();
+        this.price = cart.keySet().stream()
+                .mapToLong(item -> cart.get(item) * item.getPrice())
+                .sum();
+    }
+
+    public long getItemCount() {
+        return itemCount;
+    }
+
+    public long getPrice() {
+        return price;
     }
 }

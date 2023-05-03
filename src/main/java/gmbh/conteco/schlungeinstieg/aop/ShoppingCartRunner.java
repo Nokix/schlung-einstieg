@@ -2,9 +2,11 @@ package gmbh.conteco.schlungeinstieg.aop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("shopdev")
 public class ShoppingCartRunner implements CommandLineRunner {
     @Autowired
     ShoppingCart cart;
@@ -18,7 +20,7 @@ public class ShoppingCartRunner implements CommandLineRunner {
         cart.addItem(item1);
         cart.addItem(item1);
         cart.removeItem(item0);
-
+//        cart.updateItemCount();
         cart.checkout();
     }
 }
