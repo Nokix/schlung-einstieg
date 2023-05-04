@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("hospital")
 public class HosptialConfig {
     @Bean
     @Profile("dev")
