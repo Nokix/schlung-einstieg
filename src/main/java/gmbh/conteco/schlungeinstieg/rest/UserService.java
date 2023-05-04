@@ -7,4 +7,6 @@ public interface UserService {
     List<User> getAllUsers();
 
     Optional<User> getUserById(Long id);
+
+    List<User> generateUsers(Long amount);
 }
