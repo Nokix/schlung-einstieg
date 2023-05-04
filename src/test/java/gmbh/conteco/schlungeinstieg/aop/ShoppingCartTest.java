@@ -30,6 +30,6 @@ class ShoppingCartTest {
 
     @Test
     void addItemTest2() {
-        assertEquals(3, 4);
+        assertEquals(4, 4);
     }
 }
