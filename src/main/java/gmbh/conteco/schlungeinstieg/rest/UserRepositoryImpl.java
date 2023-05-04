@@ -27,4 +27,10 @@ public class UserRepositoryImpl implements UserRepository {
     public Optional<User> getUserById(Long id) {
         return users.stream().filter(user -> user.getId().equals(id)).findFirst();
     }
+
+    @Override
+    public User saveUser(User user) {
+        users.add(user);
+        return user;
+    }
 }

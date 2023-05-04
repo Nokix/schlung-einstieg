@@ -9,4 +9,6 @@ public interface UserService {
     Optional<User> getUserById(Long id);
 
     List<User> generateUsers(Long amount);
+
+    User saveUser(User user);
 }

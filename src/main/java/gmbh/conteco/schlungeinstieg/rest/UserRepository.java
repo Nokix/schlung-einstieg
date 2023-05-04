@@ -7,4 +7,6 @@ public interface UserRepository {
     List<User> getAllUsers();
 
     Optional<User> getUserById(Long id);
+
+    User saveUser(User user);
 }

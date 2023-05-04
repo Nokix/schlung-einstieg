@@ -5,6 +5,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 @Service
 @RequiredArgsConstructor
@@ -27,13 +30,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> generateUsers(Long amount) {
-        // Beispiel zur Erstellung eines Namens
-        String firstName = faker.name().firstName();
-        // amount viele user generieren
-        // user im repository speichern
-        // neue user zurückgeben.
-        return null;
+        return LongStream.range(0, amount)
+                .mapToObj(i -> new User(i, faker.name().firstName()))
+                .map(userRepository::saveUser)
+                .collect(Collectors.toList());
     }
 
-
+    @Override
+    public User saveUser(User user) {
+        return userRepository.saveUser(user);
+    }
 }

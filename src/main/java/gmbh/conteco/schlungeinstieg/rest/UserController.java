@@ -27,11 +27,16 @@ public class UserController {
         return userService.getUserById(abc);
     }
 
-    // Pathvariable soll mit "/user/generate?n=..." aufgerufen werden.
-    // Defaultwert von 10 für amount gibt.
     @PostMapping("/user/generate")
-    public List<User> generateUsers(@RequestParam Long amount) {
+    public List<User> generateUsers(
+            @RequestParam(name = "n", defaultValue = "10") Long amount
+    ) {
         return userService.generateUsers(amount);
+    }
+
+    @PostMapping("/users")
+    public User saveUser(@RequestBody User user) {
+        return userService.saveUser(user);
     }
 
 }
