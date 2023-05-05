@@ -1,5 +1,8 @@
 package gmbh.conteco.schlungeinstieg.rest;
 
+import gmbh.conteco.schlungeinstieg.rest.controller.UserController;
+import gmbh.conteco.schlungeinstieg.rest.entities.User;
+import gmbh.conteco.schlungeinstieg.rest.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +15,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.mockito.Mockito;
 
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @WebMvcTest(UserController.class)
 class UserControllerTest {

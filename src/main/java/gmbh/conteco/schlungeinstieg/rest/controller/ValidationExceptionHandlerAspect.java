@@ -1,4 +1,4 @@
-package gmbh.conteco.schlungeinstieg.rest;
+package gmbh.conteco.schlungeinstieg.rest.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.ObjectError;
